@@ -1,0 +1,82 @@
+package spring.cloud.kafka.product.models;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class ProductValue 
+{
+	private Long id;
+    private String productCategory;
+    private String name;
+    private double price;
+    private int stockQuantity;
+    private DetailValue detail;
+    
+    public ProductValue(String productCategory, String name, double price, int stockQuantity) {
+        this.productCategory = productCategory;
+        this.name = name;
+        this.price = price;
+        this.stockQuantity = stockQuantity;
+    }
+    //accessors and mutators of the product
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getProductCategory() {
+        return productCategory;
+    }
+
+    public void setProductCategory(String productCategory) {
+        this.productCategory = productCategory;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getStockQuantity() {
+        return stockQuantity;
+    }
+
+    public void setStockQuantity(int stockQuantity) {
+        this.stockQuantity = stockQuantity;
+    }
+    
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+    
+    public DetailValue getDetail() {
+		return detail;
+	}
+    
+    public void setDetail(DetailValue detail) {
+		this.detail = detail;
+	}
+    
+	//retrive all the information of the product
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", productCategory='" + productCategory + '\'' +
+                ", name='" + name + '\'' +
+                ", price='" + price + '\'' +
+                ", stockQuantity='" + stockQuantity + '\'' +
+                ", productDetail='" + detail + '\'' +
+                '}';
+    }
+}
