@@ -10,13 +10,14 @@ public class ProductValue
     private String name;
     private double price;
     private int stockQuantity;
-    private DetailValue detail;
+    private Long detail;
     
-    public ProductValue(String productCategory, String name, double price, int stockQuantity) {
+    public ProductValue(String productCategory, String name, double price, int stockQuantity, Long detail) {
         this.productCategory = productCategory;
         this.name = name;
         this.price = price;
         this.stockQuantity = stockQuantity;
+        this.detail = detail;
     }
     //accessors and mutators of the product
     public Long getId() {
@@ -59,11 +60,11 @@ public class ProductValue
         this.price = price;
     }
     
-    public DetailValue getDetail() {
+    public Long getDetail() {
 		return detail;
 	}
     
-    public void setDetail(DetailValue detail) {
+    public void setDetail(Long detail) {
 		this.detail = detail;
 	}
     

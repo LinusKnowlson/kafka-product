@@ -19,9 +19,9 @@ public class LoadDatabase {
     @Bean
     CommandLineRunner initDB(ProductRepository productRepository, ProductDetailRepository productDetailRepository) {
         return args -> {
-            log.info("Loading... " + productRepository.save(new Product("kitchen utensils","microwave",786.5,23)));
-            log.info("Loading... " + productRepository.save(new Product("Other utility","microprocessor",300.25,5)));
-            log.info("Loading... " + productRepository.save(new Product("Kitchen utility","dishwasher",850,17)));
+            log.info("Loading... " + productRepository.save(new Product("kitchen utensils","microwave",786.5,23,Long.valueOf(4))));
+            log.info("Loading... " + productRepository.save(new Product("Other utility","microprocessor",300.25,5,Long.valueOf(5))));
+            log.info("Loading... " + productRepository.save(new Product("Kitchen utility","dishwasher",850,37,Long.valueOf(6))));
             productDetailRepository.save(new ProductDetail("frequency of 2450 MHz (a wavelength of 12.24 cm)", "Nice microwave"));
             productDetailRepository.save(new ProductDetail("an integrated circuit that contains all the functions of a central processing unit of a computer", "Nice microprocessor"));
             productDetailRepository.save(new ProductDetail("wish dishes", "Nice dishwasher"));

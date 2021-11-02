@@ -5,10 +5,6 @@ import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Product 
@@ -20,18 +16,16 @@ public class Product
     private String name;
     private double price;
     private int stockQuantity;
-    @OneToOne
-    @JoinColumn(name = "detail_id")
-    @JsonIgnore
-    private ProductDetail detail;
+    private Long detail;
     
     public Product() {}
 
-    public Product(String productCategory, String name, double price, int stockQuantity) {
+    public Product(String productCategory, String name, double price, int stockQuantity, Long detail) {
         this.productCategory = productCategory;
         this.name = name;
         this.price = price;
         this.stockQuantity = stockQuantity;
+        this.detail = detail;
     }
     //accessors and mutators of the product
     public Long getId() {
@@ -74,11 +68,11 @@ public class Product
         this.price = price;
     }
     
-    public ProductDetail getDetail() {
+    public Long getDetail() {
 		return detail;
 	}
     
-    public void setDetail(ProductDetail detail) {
+    public void setDetail(Long detail) {
 		this.detail = detail;
 	}
     
